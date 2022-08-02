@@ -1,17 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Sighting } from 'src/sighting';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SightingService {
 
-  private serverURL = '';
+  private apiServerURL = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
 
-  public getSightings(): Observable<any> {
-    return this.http.get<any>(`${this.serverURL}/all`);
+  public getSightings(): Observable<Sighting[]> {
+    return this.http.get<Sighting[]>(`${this.apiServerURL}`);
   }
+
+  // public addSightings(sighting: Sighting): Observable<Sighting> {
+  //   return this.http.post<Sighting>(`${this.apiServerURL}/add`, sighting);
+  // }
+
+  // public updateSightings(sighting: Sighting): Observable<Sighting> {
+  //   return this.http.put<Sighting>(`${this.apiServerURL}/update`, sighting);
+  // }
 }
