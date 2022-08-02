@@ -1,0 +1,87 @@
+<div class="col-lg-8 p-5 mx-auto">
+    <form action="#" class="contact-form form-validate" novalidate="novalidate">
+        <div class="row">
+            <div class="col-sm-3 mb-3">
+                <div class="form-group">
+                    <label class="required-field">ID</label>
+                    <input type="number" class="form-control" id="id" name="id" placeholder="e.g. 18017757210">
+                </div>
+            </div>
+
+            <div class="col-sm-9 mb-3">
+                <div class="form-group">
+                    <label class="required-field">Title</label>
+                    <input type="text" class="form-control" id="title" name="title"
+                           placeholder="e.g. [DG2][512FRD B0][DX12] 3DMark - little pixels corruptions in VRS Tier 1 test">
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-3">
+                <div class="form-group">
+                    <label class="required-field">Cycle when found</label>
+                    <input type="text" class="form-control" id="foundInCycle" name="foundInCycle"
+                           placeholder="e.g. 8968 + 1320">
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-3">
+                <div class="form-group">
+                    <label class="required-field">Priority</label>
+                    <select class="form-select" aria-label="priority">
+                        <option value="1">p1-showstopper</option>
+                        <option value="2">p2-high</option>
+                        <option value="3">p3-medium</option>
+                        <option value="3">p4-low</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-3">
+                <div class="form-group">
+                    <label class="required-field">New issue</label>
+                    <select class="form-select" aria-label="new issue">
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-3">
+                <div class="form-group">
+                    <label class="required-field">Regression</label>
+                    <select class="form-select" aria-label="regression">
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                        <option value="3">Unknown</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-3">
+                <div class="form-group">
+                    <label class="required-field">Status reason</label>
+                    <input type="text" class="form-control" id="reason" name="reason"
+                           placeholder="e.g. open.awaiting_triage">
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-3">
+                <div class="form-group">
+                    <label class="required-field">Component</label>
+                    <input type="text" class="form-control" id="component" name="component"
+                           placeholder="e.g. ip.graphics_driver.unassigned">
+                </div>
+            </div>
+
+            <div class="col-sm-3 mx-auto mb-5">
+                <button type="submit" name="submit" class="btn btn-primary">Add/update sighting</button>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+<div class="d-grid gap-5">
+    <button type="button" class="btn btn-primary mx-auto" routerLink="">Back</button>
+</div>
