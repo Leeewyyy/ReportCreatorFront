@@ -4,50 +4,53 @@
 
         <div class="container p-5">
             <textarea class="form-control text-center" placeholder="Insert sightings' ID's here" id="floatingTextarea2"
-                style="height: 100px"></textarea>
+                style="height: 100px" #givenIDs></textarea>
             <label for="floatingTextarea2"></label>
         </div>
 
         <div class="container p-1 text-center">
-            <button type="button" class="btn btn-primary btn-lg">Generate</button>
+            <button type="button" class="btn btn-primary btn-lg"
+                (click)="generate(givenIDs.value)">Generate</button>
         </div>
     </div>
 </div>
 
-<!-- <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <table class="table table-list-search">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Found in cycle</th>
-                            <th>Priority</th>
-                            <th>New issue</th>
-                            <th>Regression</th>
-                            <th>Status Reason</th>
-                            <th>Component</th>
-                            <th>TestCount impact</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let sighting of sightings">
-                            <td>{{sighting.id}}</td>
-                            <td>{{sighting.title}}</td>
-                            <td>{{sighting.foundInCycle}}</td>
-                            <td>{{sighting.priority}}</td>
-                            <td>{{sighting.newIssueStatus}}</td>
-                            <td>{{sighting.regressionStatus}}</td>
-                            <td>{{sighting.statusReason}}</td>
-                            <td>{{sighting.component}}</td>
-                            <td>wip</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-list-search"  *ngIf="listReady">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Found in cycle</th>
+                        <th>Priority</th>
+                        <th>New issue</th>
+                        <th>Regression</th>
+                        <th>Status Reason</th>
+                        <th>Component</th>
+                        <th>TestCount impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sighting of preparedSightings">
+                        <td>{{sighting.id}}</td>
+                        <td>{{sighting.title}}</td>
+                        <td>{{sighting.foundInCycle}}</td>
+                        <td>{{sighting.priority}}</td>
+                        <td>{{sighting.newIssueStatus}}</td>
+                        <td>{{sighting.regressionStatus}}</td>
+                        <td>{{sighting.statusReason}}</td>
+                        <td>{{sighting.component}}</td>
+                        <td>{{sightingCountMap.get(sighting.id)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="text-center display-6" *ngIf="showError">IDs: {{wrongIDs}} do not exist in database</p>
         </div>
-    </div> -->
+    </div>
+</div>
 
 <div class="col-6 mx-auto">
     <div class="d-grid gap-5">
