@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { SightingService } from './sighting.service';
 import { AddSightingPageComponent } from './add-sighting-page/add-sighting-page.component';
 import { GenerateReportPageComponent } from './generate-report-page/generate-report-page.component';
-import { GenerateReportListComponent } from './generate-report-list/generate-report-list.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppComponent,
     AddSightingPageComponent,
     GenerateReportPageComponent,
-    GenerateReportListComponent,
     HomePageComponent
   ],
   imports: [
