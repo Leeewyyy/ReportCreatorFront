@@ -17,11 +17,7 @@ export class SightingService {
     return this.http.get<Sighting[]>(`${this.apiServerURL}`);
   }
 
-  // public addSightings(sighting: Sighting): Observable<Sighting> {
-  //   return this.http.post<Sighting>(`${this.apiServerURL}/add`, sighting);
-  // }
-
-  // public updateSightings(sighting: Sighting): Observable<Sighting> {
-  //   return this.http.put<Sighting>(`${this.apiServerURL}/update`, sighting);
-  // }
+  public updateSightings(sighting: Sighting): Observable<Sighting> {
+    return this.http.put<Sighting>(`${this.apiServerURL}`, sighting);
+  }
 }

@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { SightingService } from '../sighting.service';
 
 @Component({
   selector: 'app-add-sighting-page',
   templateUrl: './add-sighting-page.component.html',
   styleUrls: ['./add-sighting-page.component.css']
 })
-export class AddSightingPageComponent implements OnInit {
+export class AddSightingPageComponent {
 
-  constructor() { }
+  public showMsg: boolean = false;
 
-  ngOnInit(): void {
+  constructor(private sightingService: SightingService) { }
+
+  public sendSighting(form: NgForm): void {
+    this.sightingService.updateSightings(form.value).subscribe();
+    this.showMsg = true;
+    form.reset();
   }
-
 }

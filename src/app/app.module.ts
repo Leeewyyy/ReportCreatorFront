@@ -8,6 +8,7 @@ import { SightingService } from './sighting.service';
 import { AddSightingPageComponent } from './add-sighting-page/add-sighting-page.component';
 import { GenerateReportPageComponent } from './generate-report-page/generate-report-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomePageComponent } from './home-page/home-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [SightingService],
   bootstrap: [AppComponent]

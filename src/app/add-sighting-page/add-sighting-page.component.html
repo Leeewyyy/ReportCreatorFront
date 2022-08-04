@@ -1,17 +1,17 @@
 <div class="col-lg-8 p-5 mx-auto">
-    <form action="#" class="contact-form form-validate" novalidate="novalidate">
+    <form action="#" class="contact-form form-validate" novalidate="novalidate" #form="ngForm" (ngSubmit)="sendSighting(form)">
         <div class="row">
             <div class="col-sm-3 mb-3">
                 <div class="form-group">
                     <label class="required-field">ID</label>
-                    <input type="number" class="form-control" id="id" name="id" placeholder="e.g. 18017757210">
+                    <input type="number" class="form-control" id="id" ngModel name="id" placeholder="e.g. 18017757210">
                 </div>
             </div>
 
             <div class="col-sm-9 mb-3">
                 <div class="form-group">
                     <label class="required-field">Title</label>
-                    <input type="text" class="form-control" id="title" name="title"
+                    <input type="text" class="form-control" id="title" ngModel name="title"
                            placeholder="e.g. [DG2][512FRD B0][DX12] 3DMark - little pixels corruptions in VRS Tier 1 test">
                 </div>
             </div>
@@ -19,7 +19,7 @@
             <div class="col-sm-6 mb-3">
                 <div class="form-group">
                     <label class="required-field">Cycle when found</label>
-                    <input type="text" class="form-control" id="foundInCycle" name="foundInCycle"
+                    <input type="text" class="form-control" id="foundInCycle" ngModel name="foundInCycle"
                            placeholder="e.g. 8968 + 1320">
                 </div>
             </div>
@@ -27,11 +27,11 @@
             <div class="col-sm-6 mb-3">
                 <div class="form-group">
                     <label class="required-field">Priority</label>
-                    <select class="form-select" aria-label="priority">
-                        <option value="1">p1-showstopper</option>
-                        <option value="2">p2-high</option>
-                        <option value="3">p3-medium</option>
-                        <option value="3">p4-low</option>
+                    <select class="form-select" aria-label="priority" ngModel name="priority">
+                        <option value="p1-showstopper">p1-showstopper</option>
+                        <option value="p2-high">p2-high</option>
+                        <option value="p3-medium">p3-medium</option>
+                        <option value="p4-low">p4-low</option>
                     </select>
                 </div>
             </div>
@@ -39,9 +39,9 @@
             <div class="col-sm-6 mb-3">
                 <div class="form-group">
                     <label class="required-field">New issue</label>
-                    <select class="form-select" aria-label="new issue">
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                    <select class="form-select" aria-label="new issue" ngModel name="newIssueStatus">
+                        <option value=true>Yes</option>
+                        <option value=false>No</option>
                     </select>
                 </div>
             </div>
@@ -49,10 +49,10 @@
             <div class="col-sm-6 mb-3">
                 <div class="form-group">
                     <label class="required-field">Regression</label>
-                    <select class="form-select" aria-label="regression">
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
-                        <option value="3">Unknown</option>
+                    <select class="form-select" aria-label="regression" ngModel name="regressionStatus">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="Unknown">Unknown</option>
                     </select>
                 </div>
             </div>
@@ -60,7 +60,7 @@
             <div class="col-sm-6 mb-3">
                 <div class="form-group">
                     <label class="required-field">Status reason</label>
-                    <input type="text" class="form-control" id="reason" name="reason"
+                    <input type="text" class="form-control" id="reason" ngModel name="statusReason"
                            placeholder="e.g. open.awaiting_triage">
                 </div>
             </div>
@@ -68,18 +68,21 @@
             <div class="col-sm-6 mb-3">
                 <div class="form-group">
                     <label class="required-field">Component</label>
-                    <input type="text" class="form-control" id="component" name="component"
+                    <input type="text" class="form-control" id="component" ngModel name="component"
                            placeholder="e.g. ip.graphics_driver.unassigned">
                 </div>
             </div>
 
-            <div class="col-sm-3 mx-auto mb-5">
+            <div class="col-sm-2 mx-auto mb-3">
                 <button type="submit" name="submit" class="btn btn-primary">Add/update sighting</button>
             </div>
 
         </div>
 
     </form>
+
+    <p class="text-center display-6" *ngIf="showMsg">Sighting added/updated</p>
+
 
 </div>
 <div class="d-grid gap-5">
