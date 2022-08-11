@@ -1,3 +1,3 @@
 # ReportCreatorFront
 
-Front end for app which automatize report creation.
+Front end for web app which automatize report creation.
